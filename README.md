@@ -15,7 +15,7 @@
 3. Compile your project with `get_next_line.c`:
 
     ```bash
-    gcc -Wall -Wextra -Werror -D BUFFER_SIZE=your_buffer_size your_source_files.c get_next_line.c -o your_executable
+    gcc -Wall -Wextra -Werror -D BUFFER_SIZE=your_buffer_size your_source_files.c get_next_line.c get_next_line_utils.c -o your_executable
     ```
 
     Replace `your_buffer_size` with the desired buffer size (e.g., 32, 64).
@@ -30,14 +30,14 @@
         char *line;
 
         // Open your file descriptor (fd) here
+        fd = open("PATH_TO_FILE", O_RDWR);
+        line = get_next_line(fd);
 
-        while (get_next_line(fd, &line) > 0) {
-            // Process the line as needed
-            printf("%s\n", line);
-            free(line);
-        }
+       printf("%s\n", line);
+       free(line);
 
         // Close your file descriptor (fd) here
+        close(fd);
 
         return 0;
     }
