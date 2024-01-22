@@ -7,7 +7,7 @@
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/get_next_line.git
+    git clone https://github.com/flutterde/42_get_next_line.git
     ```
 
 2. Include the `get_next_line.c` and `get_next_line.h` files in your project.
